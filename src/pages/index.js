@@ -3,7 +3,6 @@ import Link from "next/link";
 import Layout from '../../components/Layout';
 import { motion } from "framer-motion";
 import Typical from  'react-typical';
-
 import GithubIcon from '../../components/icons/Github.js';
 import LinkedinIcon from '../../components/icons/Linkedin.js';
 

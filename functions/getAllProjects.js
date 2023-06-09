@@ -1,11 +1,8 @@
-import { gql, GraphQLClient } from "graphql-request";
-
-
-const graphcms = new GraphQLClient("https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clh33vuv54q2e01ta8p58cwvc/master");
-
+import { gql } from "graphql-request";
+import { graphcms } from "../client";
 
 export const getAllProjects = async () => {
-    const getAllProjectsQuery = gql`
+  const getAllProjectsQuery = gql`
     {
       projects {
         id
@@ -18,10 +15,9 @@ export const getAllProjects = async () => {
         tags
       }
     }
-    `;
+  `;
 
+  const { projects } = await graphcms.request(getAllProjectsQuery);
 
-    const { projects } = await graphcms.request(getAllProjectsQuery);
-
-    return projects;
+  return projects;
 };
